@@ -1,5 +1,5 @@
 
-export const users = {
+module.exports = users = {
     jonas: "jonas",
 
 };

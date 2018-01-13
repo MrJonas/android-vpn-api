@@ -3,10 +3,11 @@ const app = express()
 const port = 4200;
 const bodyParser = require('body-parser');
 const basicAuth = require('express-basic-auth');
-import {users} from "./../mock-data/users";
+const users = require("./../mock-data/users");
+console.log(users);
 app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
-app.use(basicAuth({users}));
+app.use(basicAuth({users: users}));
 app.post('/', (req, res) => {
     res.send();
 });
