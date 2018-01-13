@@ -9,6 +9,8 @@ app.post('/', (req, res) => {
     res.send();
 });
 app.get('/servers', (req, res) => {
+    let d = new Date();
+    console.log(d.getDate() + ' servers');
     res.json({servers: [
         {
             h: "hostname",
