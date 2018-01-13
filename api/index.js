@@ -1,18 +1,30 @@
 const express = require('express')
 const app = express()
 const port = 4200;
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded());
+app.use(bodyParser.json());
 
-app.get('/', (req, res) => {
-    console.log(req);
-    res.send(JSON.stringify(req.body));
-});
 app.post('/', (req, res) => {
-    console.log(req);
-    res.send(JSON.stringify(req.body));
+    res.send();
+});
+app.get('/servers', (req, res) => {
+    res.json({servers: [
+        {
+            h: "hostname",
+            l: "location",
+            c: "country",
+            cc: "LT"
+        },{
+            h: "hostname",
+            l: "location",
+            c: "country",
+            cc: "LT"
+        }
+    ]});
 });
 app.post('/servers', (req, res) => {
-    console.log(req);
-    res.send(JSON.stringify(req.body));
+    res.send("test");
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

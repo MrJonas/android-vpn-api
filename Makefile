@@ -3,7 +3,7 @@ IMAGE_NAME:="vpn_app"
 CONTAINER_NAME:="vpn_app"
 PORT:="80"
 APP_NAME:="android-vpn-api"
-REPO:="https://mrjonas:roteiro0@github.com/MrJonas/android-vpn-api.git"
+REPO:="git@github.com:MrJonas/android-vpn-api.git"
 
 
 PHONY: deploy
@@ -12,7 +12,8 @@ deploy:
 		@echo "Uploading and running app in a docker container"
 		@echo "-------------------------------------------------------"
 		@ssh root@$(SERVER_IP) \
-				"git clone $(REPO); \
+				" rm -rf $(APP_NAME); \
+				git clone $(REPO); \
 				cd $(APP_NAME) ; \
 				docker stop $(CONTAINER_NAME) ; \
 				docker rm $(CONTAINER_NAME) ; \
