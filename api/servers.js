@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
         {
             h: "207.246.96.153",
             l: "location",
-            c: "Lietuva",
+            c: "207.246.96.153",
             cc: "LT",
             ca: [
                 "MIIDHjCCAgagAwIBAgIJALjzok8oKw9PMA0GCSqGSIb3DQEBCwUAMA8xDTALBgNV",
@@ -50,9 +50,9 @@ app.get('/', (req, res) => {
                 "058254605d8e7805dd132652f76ec5fd"
             ]
         },{
-            h: "207.246.96.153",
+            h: "207.148.16.186",
             l: "location",
-            c: "Latvija",
+            c: "207.148.16.186",
             cc: "LV",
             ca: [
                 "MIIDHjCCAgagAwIBAgIJALjzok8oKw9PMA0GCSqGSIb3DQEBCwUAMA8xDTALBgNV",
