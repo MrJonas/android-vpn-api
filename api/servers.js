@@ -12,6 +12,8 @@ app.get('/', (req, res) => {
             l: "location",
             c: "207.246.96.153",
             cc: "LT",
+            lat: "39.1271",
+            lon: "-84.5144",
             ca: [
                 "MIIDHjCCAgagAwIBAgIJALjzok8oKw9PMA0GCSqGSIb3DQEBCwUAMA8xDTALBgNV",
                 "BAMTBHZwbjEwHhcNMTgwMTEzMjA0NTQwWhcNMjgwMTExMjA0NTQwWjAPMQ0wCwYD",
@@ -54,6 +56,8 @@ app.get('/', (req, res) => {
             l: "location",
             c: "207.148.16.186",
             cc: "LV",
+            lat: "62.456",
+            lon: "-114.3525",
             ca: [
                 "MIIDHjCCAgagAwIBAgIJALjzok8oKw9PMA0GCSqGSIb3DQEBCwUAMA8xDTALBgNV",
                 "BAMTBHZwbjEwHhcNMTgwMTEzMjA0NTQwWhcNMjgwMTExMjA0NTQwWjAPMQ0wCwYD",
