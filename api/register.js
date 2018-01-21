@@ -8,6 +8,7 @@ app.get('/register', (req, res) => {
 });
 
 app.post('/', (req, res) => {
+    console.log("register: " + JSON.stringify(req.body) );
     registerUser(req.body).then(r=> res.send({status: 'OK'}), e=>res.send({status: 'FAIL'}));
 });
 
