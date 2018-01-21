@@ -25,8 +25,10 @@ async function checkUser(username, password) {
     }
 }
 
-function asyncAuthorizer(username, password, cb) {
-    checkUser(username, password).then(r=>cb(null, true), e=>cb(null, false));
-}
+// function asyncAuthorizer(username, password, cb) {
+//     checkUser(username, password).then(r=>cb(null, true), e=>cb(null, false));
+// }
 
-export function asyncAuthorizer;
+export function asyncAuthorizer(username, password, cb) {
+    checkUser(username, password).then(r=>cb(null, true), e=>cb(null, false));
+};
