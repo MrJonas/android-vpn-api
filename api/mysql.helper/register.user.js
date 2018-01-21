@@ -3,34 +3,29 @@ import phpPassword from "node-php-password";
 import mysql from 'mysql2/promise';
 
 function getNewUser(newUserData) {
+    //TODO: use express-validor
+    if(!newUserData.username.trim() || !newUserData.password.trim() || !newUserData.mail.trim()) {
+        throw "Data not valid";
+    }
+
     const user = {
-        user_id : newUserData.username,
-        user_pass: phpPassword.hash(newUserData.password),
-        user_mail: newUserData.mail
+        user_id : newUserData.username.trim(),
+        user_pass: phpPassword.hash(newUserData.password).trim(),
+        user_mail: newUserData.mail.trim()
     };
     return user;
 }
 
-async function registerUser(newUserData) {
+export async function registerUser(newUserData) {
     let connection;
     try {
+        let newUser = getNewUser(newUserData);
         connection = await mysql.createConnection(config);
-        const result = await connection.query('INSERT INTO user SET ?', getNewUser(newUserData));
+        const result = await connection.query('INSERT INTO user SET ?', newUser);
         await connection.end();
-        console.log(result);
         return Promise.resolve();
     } catch (e) {
         await connection.end();
         return Promise.reject();
     }
-}
-
-let nu = {
-    username: 'test',
-    password: 'test',
-    mail: 'test@test.com'
-}
-
-registerUser(nu).then(r=>{}, e=>{});
-
-export function registerUser;
+};

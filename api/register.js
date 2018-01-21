@@ -1,11 +1,14 @@
-import {servers} from './../mock-data/servers';
 const express = require('express');
 const app = express();
-const basicAuth = require('express-basic-auth');
 
+import {registerUser} from './mysql.helper/register.user';
+
+app.get('/register', (req, res) => {
+    res.send("Link to register page");
+});
 
 app.post('/', (req, res) => {
-    res.json(servers);
+    registerUser(req.body).then(r=> res.send({status: 'OK'}), e=>res.send({status: 'FAIL'}));
 });
 
 module.exports = app;
