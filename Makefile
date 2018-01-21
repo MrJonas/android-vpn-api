@@ -1,4 +1,4 @@
-SERVER_IP:="79.98.29.99"
+SERVER_IP:="45.63.74.224"
 IMAGE_NAME:="vpn_app"
 CONTAINER_NAME:="vpn_app"
 PORT:="80"
